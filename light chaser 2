@@ -1,0 +1,32 @@
+/*
+ This program turns the 1st LED on then off, the 2nd LED on then off, and the 3rd LED on then off.
+ Then it reverses: the 3rd LED turns on then off, the 2nd LED turns on then off, and the 1st LED turns on then off.
+ This creates a "chasing" light effect that moves back and forth.
+*/
+void setup() { // Runs once when the program starts
+  pinMode(8, OUTPUT); // Sets pin 8 as an output for the first LED
+  pinMode(7, OUTPUT); // Sets pin 7 as an output for the second LED
+  pinMode(4, OUTPUT); // Sets pin 4 as an output for the third LED
+}
+
+void loop() { // Runs continuously
+  digitalWrite(8, HIGH);  // Turns on the first LED
+  delay(1000);            // Waits 1 second
+  digitalWrite(8, LOW);   // Turns off the first LED
+  digitalWrite(7, HIGH);  // Turns on the second LED
+  delay(1000);            // Waits 1 second
+  digitalWrite(7, LOW);   // Turns off the second LED
+  digitalWrite(4, HIGH);  // Turns on the third LED
+  delay(1000);            // Waits 1 second
+  digitalWrite(4, LOW);   // Turns off the third LED
+  delay(100);             // Short pause before reversing direction
+  digitalWrite(4, HIGH);  // Turns on the third LED again (starting reverse sequence)
+  delay(1000);            // Waits 1 second
+  digitalWrite(4, LOW);   // Turns off the third LED
+  digitalWrite(7, HIGH);  // Turns on the second LED again
+  delay(1000);            // Waits 1 second
+  digitalWrite(7, LOW);   // Turns off the second LED
+  digitalWrite(8, HIGH);  // Turns on the first LED again
+  delay(1000);            // Waits 1 second
+  digitalWrite(8, LOW);   // Turns off the first LED
+}
