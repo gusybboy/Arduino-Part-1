@@ -1,0 +1,19 @@
+void setup() {
+  // Start serial connection (optional if you don't need Serial Monitor)
+  // Serial.begin(9600);
+
+  // Configure pins 3, 5, and 6 as OUTPUT for the RGB LED
+  pinMode(3, OUTPUT); // Red
+  pinMode(5, OUTPUT); // Green
+  pinMode(6, OUTPUT); // Blue
+}
+
+void loop() {
+  // Set RGB values - adjust between 0 (off) and 255 (full brightness)
+  analogWrite(3, 100); // Set brightness for Red (0-255)
+  analogWrite(5, 200); // Set brightness for Green (0-255)
+  analogWrite(6, 50);  // Set brightness for Blue (0-255)
+  
+  // Delay is optional if you want to keep the color constant
+  delay(1000); // Wait 1 second before repeating (adjust as needed)
+}
