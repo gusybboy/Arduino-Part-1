@@ -1,0 +1,19 @@
+/*
+Program to continuously read and display the push button state (0 or 1) on the Serial Monitor, indicating whether the button connected to pin 2 is pressed or not.
+*/
+int pushbutton = 2; // Set variable 'pushbutton' to pin 2 for the push button connection
+
+void setup() { 
+  // Start serial communication
+  Serial.begin(9600); 
+  // Set pin 2 as an input for reading the button state
+  pinMode(pushbutton, INPUT); 
+} 
+void loop() { 
+  // Read the state of the push button (0 or 1) into 'buttonValue'
+  int buttonValue = digitalRead(pushbutton); 
+  // Print a label "Button State = " on the Serial Monitor
+  Serial.print("Button State = "); 
+  // Print the button state (0 or 1) with a newline on the Serial Monitor
+  Serial.println(buttonValue); 
+}
