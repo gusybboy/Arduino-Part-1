@@ -1,0 +1,32 @@
+// Digital pin 2 has a pushbutton attached to it.
+int pushButton = 2;
+
+// Pins for the RGB LED
+int Red = 8;
+int Green = 7;
+int Blue = 4;
+
+void setup() {
+  // Initialize serial communication
+  Serial.begin(9600);
+  // Set the pushbutton pin as an input with internal pull-up resistor
+  pinMode(pushButton, INPUT_PULLUP);
+  // Set the LED pins as outputs
+  pinMode(Red, OUTPUT);
+  pinMode(Green, OUTPUT);
+  pinMode(Blue, OUTPUT);
+}
+
+void loop() {
+  // Read the button state, inverting it to get the desired behavior
+  int buttonState = !digitalRead(pushButton);
+  // Turn on the red LED
+  digitalWrite(Red, HIGH);
+  // Control the green LED based on the button state
+  digitalWrite(Green, !buttonState);
+  // Control the blue LED based on the button state
+  digitalWrite(Blue, buttonState);
+  // Print the button state to the serial monitor
+  Serial.print("buttonState = ");
+  Serial.println(buttonState);
+}
