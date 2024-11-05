@@ -1,0 +1,13 @@
+/*
+This program will display 0 or 1 on serial monitor with a push button
+*/
+int pushbutton = 2; // Declares a variable 'pushbutton' and assigns it the value 2, which is the pin connected to the push button.
+void setup() {  // The setup function runs once at the beginning
+  Serial.begin(9600); // Starts serial communication at a baud rate of 9600 for monitoring output in the Serial Monitor
+  pinMode(pushbutton, INPUT_PULLUP); // Set 'pushbutton' (pin 2) as an input with an internal pull-up resistor, so it reads HIGH when unpressed and LOW when pressed.
+} 
+void loop() {  // The loop function runs continuously
+  int buttonValue = !digitalRead(pushbutton); // Reads the state of the button connected to 'pushbutton' pin and stores the inverted value in 'buttonValue'
+  Serial.print("Button State = "); // Prints the text "Button State = " to the Serial Monitor
+  Serial.println(buttonValue); // Prints the value of 'buttonValue' (either 0 or 1) to the Serial Monitor with a newline
+}
