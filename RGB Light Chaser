@@ -1,0 +1,28 @@
+/*
+ This program turn the 1st LED on then off, and turns a 2nd LED on then off, and turns a 3rd LED on then off. Afterwards, it restart
+ from the start. So, its a light chaser porgram going to the end and restarting.
+
+*/
+// Pins for the RGB LED
+int Red = 8;
+int Green = 7;
+int Blue = 4;
+void setup() { // the setup function runs once
+
+  pinMode(Red, OUTPUT);  // Makes the pin 8 an output for an LED
+  pinMode(Green, OUTPUT);  // Makes the pin 7 an output for an LED
+  pinMode(Blue, OUTPUT);  // Makes the pin 4 an output for an LED
+}
+
+void loop() { // the loop function runs forever
+  digitalWrite(Red, HIGH);  // turn the first LED on
+  delay(1000);  // waits 1 second
+  digitalWrite(Red, LOW);
+  digitalWrite(Green, HIGH); // turn the second LED on
+  delay(1000); // waits 1 second
+  digitalWrite(Green, LOW);
+  digitalWrite(Blue, HIGH);  // turn the third LED on
+  delay(1000);  // waits 1 second
+  digitalWrite(Blue, LOW);
+  delay(150);
+}
